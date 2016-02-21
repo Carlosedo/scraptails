@@ -20,4 +20,5 @@ class CocktailPipeline(object):
 
         item['description'] = item['description'].replace('Absolut Vodka', 'Vodka')
 
+        item.save()
         return item
