@@ -12,11 +12,12 @@ class ScraptailsPipeline(object):
 
 class CocktailPipeline(object):
     def process_item(self, item, spider):
-#         tastes = item['tastes']
-#         item['tastes'] = []
+        item['title'] = item['title'].replace('Absolut ', '')
 
-#         for taste in tastes:
+        for ingredient in item['ingredients']:
+            if 'Absolut' in ingredient['ingredient']:
+                ingredient['ingredient'] = 'Vodka'
 
-#         item['tastes'] = Category.objects.get(id=2)
-        # item.save()
+        item['description'] = item['description'].replace('Absolut Vodka', 'Vodka')
+
         return item
