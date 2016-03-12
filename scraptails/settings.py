@@ -68,7 +68,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'mixees.settings'
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'scraptails.pipelines.CocktailPipeline': 300,
+   'scraptails.pipelines.ScraptailsPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -8,19 +8,29 @@
 import scrapy
 
 from apps.cocktails.models import Cocktail
+from apps.tastes.models import Taste
+from apps.ingredients.models import Spirit, Mixer, Ingredient
 
 from scrapy_djangoitem import DjangoItem
 
 
 class CocktailItem(DjangoItem):
     django_model = Cocktail
-# class CocktailItem(scrapy.Item):
 
-    # title = scrapy.Field()
-    # mixing_instructions = scrapy.Field()
     description = scrapy.Field(default='No description')
 
-    ingredients = scrapy.Field()
-    scraped_tastes = scrapy.Field()
-    # glass_type = scrapy.Field()
-    # skill_level = scrapy.Field()
+class TasteItem(DjangoItem):
+    django_model = Taste
+
+class SpiritItem(DjangoItem):
+    django_model = Spirit
+
+class MixerItem(DjangoItem):
+    django_model = Mixer
+
+class IngredientItem(DjangoItem):
+    django_model = Ingredient
+
+    cocktail = scrapy.Field()
+    liquid = scrapy.Field()
+    kind = scrapy.Field()
