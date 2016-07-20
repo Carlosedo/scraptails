@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import scrapy
 
 from scraptails.items import CocktailItem, SpiritItem, MixerItem, TasteItem, IngredientItem
